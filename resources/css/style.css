@@ -1,0 +1,108 @@
+*{
+    font-family: "Handlee", cursive;
+    color: rgb(117, 57, 0);
+}
+
+h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5{
+    font-family: "Delius Unicase", cursive;
+    color: rgb(117, 57, 0);
+}
+
+body{
+    background-color: rgba(245, 222, 179, 0.426);
+    color: rgb(159, 90, 0);
+}
+
+.navbarCustom{
+ font-size: xx-large;
+ background-color: rgba(245, 222, 179, 0.399);
+}
+
+.searchNav{
+    width: 300px;
+   background-color: wheat;
+   margin-right: 10px;
+
+}
+
+.navBtn{
+    width: 60px;
+    background-color: wheat;
+ 
+}
+
+.navBtn:hover{
+    background-color: rgb(117, 57, 0);
+    color: wheat;
+}
+
+.titleCustom{
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+    
+    /* align-items: center; non mi funziona */
+}
+
+.bgCustom{
+    background-image: url('./../../public/media/bg-library.webp');
+    height: 900px;
+    background-position: center;
+    background-size: cover;
+}
+
+.formCustom{
+  margin-top: 100px;
+  margin-left: 80px;
+}
+/* -------------------------BTN forty---------------------------- */
+
+.loader {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    --book-color: #e8bf93;
+    --book-cover-color: #5c2e02;
+  }
+  .book {
+    width: 150px;
+    height: 20px;
+    background-color: var(--book-color);
+    border-bottom: 2px solid var(--book-cover-color);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    position: relative;
+  }
+  .page {
+    width: 50%;
+    height: 2px;
+    background-color: var(--book-color);
+    animation: paging 1.2s ease-out infinite;
+    transform-origin: left;
+  }
+  .page2 {
+    width: 50%;
+    height: 2px;
+    background-color: var(--book-color);
+    animation: paging 1.4s ease-out infinite;
+    transform-origin: left;
+    position: absolute;
+  }
+  @keyframes paging {
+    10% {
+      transform: rotateZ(0deg);
+    }
+    100% {
+      transform: rotateZ(-180deg);
+    }
+  }
+
+  /* ----------------------end BTN forty------------------------- */
+
+
+footer{
+    font-size:x-large;
+}
