@@ -57,6 +57,11 @@ body{
 }
 /* -------------------------BTN forty---------------------------- */
 
+.btnLogs{
+font-size: x-large;
+color: #5c2e02;
+}
+
 .loader {
     width: fit-content;
     height: fit-content;
@@ -69,6 +74,7 @@ body{
   .book {
     width: 150px;
     height: 20px;
+    font-size: x-large;
     background-color: var(--book-color);
     border-bottom: 2px solid var(--book-cover-color);
     display: flex;
@@ -101,6 +107,10 @@ body{
   }
 
   /* ----------------------end BTN forty------------------------- */
+
+.dashCustom{
+margin-top: 100px;
+}
 
 
 footer{

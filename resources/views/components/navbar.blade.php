@@ -15,7 +15,7 @@
       </button>
       <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
           <a class="nav-link" href="#">Insert a book</a>
           <a class="nav-link" href="#">List</a>
         </div>
@@ -33,7 +33,8 @@
           <a class="nav-link" href="{{route('login')}}">Login</a>
           @endguest
           @auth
-          <a class="nav-link" href="{{route('dashboard')}}">{{Auth::user()->name}} \s books</a>
+          <a class="nav-link" href="{{route('dashboard')}}">{{Auth::user()->name}}'s books</a>
+          
           <a class="nav-link" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
           <form action="{{route('logout')}}" method="POST" id="form-logout">
             @csrf
