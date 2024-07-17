@@ -16,13 +16,15 @@
       <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-link active" aria-current="page" href="/">Home</a>
-          <a class="nav-link" href="#">Insert a book</a>
+
+          <a class="nav-link" href="{{route('book.create')}}">Insert a book</a>
+
           <a class="nav-link" href="#">List</a>
         </div>
 
  <div class="navbar-nav">
         <form class="d-flex justify-content-between">
-                <input class="searchNav form-control rounded" type="search" placeholder="Search a Book" aria-label="Search">
+                <input class="searchNav form-control rounded form-control-lg" type="search" placeholder="Search a Book" aria-label="Search">
             <button class="btn navBtn" type="submit">Send</button>
           </form>
  </div>

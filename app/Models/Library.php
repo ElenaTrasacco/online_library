@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Library extends Model
 {
-    protected $fillable = [
-        'title', 'author', 'year', 'description'
-    ];
     use HasFactory;
+    protected $fillable = 
+['title', 'author', 'year', 'description', 'cover'];
+    
 }

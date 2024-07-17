@@ -21,19 +21,11 @@ class LibraryController extends Controller
      */
     public function create()
     {
-        //
+        return view('book.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreLibraryRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
+   
+     /** Display the specified resource.
      */
     public function show(Library $library)
     {
