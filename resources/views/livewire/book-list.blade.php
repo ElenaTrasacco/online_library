@@ -12,11 +12,12 @@
                       </tr>
                     </thead>
 
-
-
     <tbody>
 
          @foreach(Auth::user()->books as $book)
+
+{{-- PROBLEMA: foreach() argument must be of type array|object, null given non è che devo fare la one2many di user?!?--}}
+
             <tr>
             <th scope="row">{{$book->id}}</th>
             <td>{{$book->title}}</td>

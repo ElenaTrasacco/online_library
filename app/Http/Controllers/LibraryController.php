@@ -16,7 +16,8 @@ class LibraryController extends Controller implements HasMiddleware
         ];}
     public function index()
     {
-        //
+        $books = Library::all();
+        return view ('book.index', compact('books')); 
     }
 
     /**

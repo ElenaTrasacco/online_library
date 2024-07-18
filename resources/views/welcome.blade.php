@@ -8,9 +8,13 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <h2 class="text-center mt-3">
+            <h2 class="text-center mt-3">
                     The 5 most popular books</h2>
+            <div class="col-12">
+                
+                    @foreach ($libraries as $library)
+                    <x-card :library="$library"/>
+                    @endforeach
             </div>
         </div>
     </div>
