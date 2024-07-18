@@ -1,4 +1,4 @@
 @import'bootstrap';
 @import'./style.css';
 @import url('https://fonts.googleapis.com/css2?family=Delius+Unicase:wght@400;700&family=Handlee&display=swap');
-/* @import 'node_modules/@fortawesome/fontawesome-free/css/all.css'; -> mi rompe il sito*/ 
+@import '@fortawesome/fontawesome-free/css/all.css';

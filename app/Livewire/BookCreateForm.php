@@ -4,10 +4,13 @@ namespace App\Livewire;
 
 use App\Models\Library;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
 
 class BookCreateForm extends Component
 {
+    use WithFileUploads;
+    
     #[Validate('required|min:3')]
     public $title;
     #[Validate('required|min:5')]
@@ -21,6 +24,7 @@ class BookCreateForm extends Component
 
     public function store()
     {
+        $this->validate();
        Library::create([
        
         'title' => $this->title,

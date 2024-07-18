@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Library;
 use App\Http\Requests\StoreLibraryRequest;
 use App\Http\Requests\UpdateLibraryRequest;
-use App\Models\Library;
+use Illuminate\Routing\Controllers\Middleware;
+use Illuminate\Routing\Controllers\HasMiddleware;
 
-class LibraryController extends Controller
+class LibraryController extends Controller implements HasMiddleware
 {
-    /**
-     * Display a listing of the resource.
-     */
+    public static function middleware(){
+        return [
+            new Middleware('auth', only: ['create'])
+        ];}
     public function index()
     {
         //

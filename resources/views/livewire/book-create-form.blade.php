@@ -1,17 +1,22 @@
 <div>
     {{-- A good traveler has no fixed plans and is not intent upon arriving. --}}
     
-    <form class="mt-3 mx-5 " action="{{route('book.create')}}" method="POST" wire:submit="store">
+    <form class="mt-3 mx-5" wire:submit="store">
             @if(session('bookCreated'))
             <div class="alert alert-success">
                 {{session('bookCreated')}} 
             </div>
             @endif
- @csrf
+
         <div class="form-group">
         <label for="cover" class="formTextSize">Cover</label>
         <input type="file" class="form-control form-control-lg" id="cover" placeholder="Enter cover" wire:model="cover">
         </div>
+        @if ($cover)
+        <div class="mb-3">
+            <img src="{{$cover->temporaryUrl()}}" alt="" class="img-fluid">
+        </div>
+        @endif
 
 
         <div class="form-group">

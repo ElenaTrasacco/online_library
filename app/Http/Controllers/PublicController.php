@@ -3,14 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controllers\HasMiddleware;
+use Illuminate\Routing\Controllers\Middleware;
 
-class PublicController extends Controller
+class PublicController extends Controller implements HasMiddleware
 {
-    public function home(){
-        return view ('welcome');
+    public static function middleware()
+    {
+        return[
+            new Middleware('auth', only:['dashboard']),
+        ];
     }
 
-    public function dashboard(){
-        return view('auth.dashboard');
+    public function home(){
+            return view ('welcome');
+        }
+
+        public function dashboard(){
+            return view('auth.dashboard');
+        }
     }
-}
+
+    
+
