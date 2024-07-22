@@ -12,7 +12,7 @@ class LibraryController extends Controller implements HasMiddleware
 {
     public static function middleware(){
         return [
-            new Middleware('auth', only: ['create'])
+            new Middleware('auth', only: ['create', 'edit'])
         ];}
     public function index()
     {

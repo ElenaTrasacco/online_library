@@ -9,6 +9,10 @@ class Library extends Model
 {
     use HasFactory;
     protected $fillable = 
-['title', 'author', 'year', 'description', 'cover'];
+['title', 'author', 'year', 'description', 'cover', 'user_id'];
+
+public function user(){
+    return $this->belongsTo(User::class);
+}
     
 }

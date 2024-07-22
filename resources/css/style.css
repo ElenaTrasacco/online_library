@@ -45,7 +45,8 @@ body{
 }
 
 .bgCustom{
-    background-image: url('./../../public/media/bg-library.webp');
+    background-image: url('/storage/app/public/media/bg-library.webp');
+    
     height: 900px;
     background-position: center;
     background-size: cover;
@@ -122,8 +123,14 @@ font-size: xx-large;
 }
 
 .cardImg{
-  height: 500px;
+  height: 300px;
+  margin-left: 10px;
 }
+
+.cardWidth{
+  width: 600px;
+}
+
 
 footer{
     font-size:x-large;

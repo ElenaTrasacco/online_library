@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('libraries', function (Blueprint $table) {
             $table->id();
-            $table->file('cover');
+            $table->string('cover');
             $table-> string('title');
             $table->string('author');
             $table->integer('year');

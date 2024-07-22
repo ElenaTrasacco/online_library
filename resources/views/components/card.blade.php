@@ -1,8 +1,7 @@
-<div class="card mb-3" style="max-width: 540px;">
+<div class="card mb-3 cardWidth">
     <div class="row g-0">
-      <div class="col-md-4">
+      <div class="col-md-4 d-flex align-items-center">
         <img src="{{Storage::url($library->cover)}}" class="img-fluid rounded-start cardImg" alt="book">
-        {{-- PROBLEMA: non vede l'img e non capisco perchè --}}
       </div>
       <div class="col-md-8">
         <div class="card-body">
@@ -11,7 +10,7 @@
           <p class="card-text mt-5">{{Str::limit($library->description)}}</p>
 
 
-          <div class="d-flex justify-content-end">
+          <div class="d-flex justify-content-start">
             <button type="submit" class="btn btnLogs mt-2"> Read more
             <div class="loader">
             <div class="book"> 
@@ -21,6 +20,9 @@
             </div> 
             </button>
             </div>
+
+
+
         </div>
       </div>
     </div>

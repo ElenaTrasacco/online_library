@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-      
         Schema::table('libraries', function (Blueprint $table) {
-           
-            if (!Schema::hasColumn('libraries', 'cover')) {
-                $table->string('cover')->default('./media/default.jpg')->after('id');
-            }
-        }); 
+        $table->unsignedBigInteger('user_id')->after('description')->nullable();
+        $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        });
     }
 
     /**
@@ -26,7 +23,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('libraries', function (Blueprint $table) {
-            $table->dropColumn('cover');
+            $table->dropForeign(['user_id']); 
+            $table->dropColumn('user_id'); 
         });
     }
 };

@@ -12,7 +12,7 @@ class PublicController extends Controller implements HasMiddleware
     public static function middleware()
     {
         return[
-            new Middleware('auth', only:['dashboard']),
+            new Middleware('auth', only:['dashboard'])
         ];
     }
 

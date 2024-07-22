@@ -6,6 +6,7 @@ use App\Models\Library;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
+use Illuminate\Support\Facades\Auth;
 
 class BookCreateForm extends Component
 {
@@ -25,16 +26,18 @@ class BookCreateForm extends Component
     public function store()
     {
         $this->validate();
-       Library::create([
-       
+
+       Auth::user()->libraries()->create([
+    
+        'cover' => $this->cover ? $this->cover->store('/public/covers'): '/media/default.png',
         'title' => $this->title,
         'author' => $this->author,
         'year' => $this->year,
-        'description' => $this->description
-       ]);
+        'description' => $this->description,
+    ]);
 
         $this->reset();
-       return redirect()->back()->with('bookCreated', 'Book created successfully');
+    return redirect()->back()->with('bookCreated', 'Book created successfully');
     }
 
     public function render()
