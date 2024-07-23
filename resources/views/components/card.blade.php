@@ -11,14 +11,15 @@
 
 
           <div class="d-flex justify-content-start">
-            <button type="submit" class="btn btnLogs mt-2"> Read more
-            <div class="loader">
-            <div class="book"> 
-            {{-- <div class="page"></div>
-            <div class="page page2"></div> --}}
-            </div>
-            </div> 
-            </button>
+            <a href="{{route('book.show', $library)}}">
+              <button type="submit" class="btn btnLogs mt-2"> Read more
+                <div class="loader">
+                <div class="book"> 
+                </div>
+                </div> 
+                </button>
+            </a>
+            
             </div>
 
 

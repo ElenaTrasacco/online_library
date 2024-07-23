@@ -33,7 +33,7 @@ class LibraryController extends Controller implements HasMiddleware
      */
     public function show(Library $library)
     {
-        //
+        return view('book.show', compact('library'));
     }
 
     /**
