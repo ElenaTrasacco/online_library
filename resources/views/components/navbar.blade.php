@@ -19,7 +19,7 @@
 
           <a class="nav-link" href="{{route('book.create')}}">Insert a book</a>
 
-          <a class="nav-link" href="#">List</a>
+          <a class="nav-link" href="{{route('book.index')}}">List</a>
         </div>
 
  <div class="navbar-nav">

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Library;
+use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreLibraryRequest;
 use App\Http\Requests\UpdateLibraryRequest;
 use Illuminate\Routing\Controllers\Middleware;
@@ -16,8 +18,8 @@ class LibraryController extends Controller implements HasMiddleware
         ];}
     public function index()
     {
-        $books = Library::all();
-        return view ('book.index', compact('books')); 
+        $library = Library::all();
+        return view ('book.index', compact('library')); 
     }
 
     /**
@@ -41,7 +43,10 @@ class LibraryController extends Controller implements HasMiddleware
      */
     public function edit(Library $library)
     {
-        //
+        if(Auth::id() == $library->user_id){
+            return view('book.edit', compact('library'));
+        }
+        return redirect()->back()->with('denied', 'Access denied, sorry');
     }
 
     /**
@@ -58,5 +63,9 @@ class LibraryController extends Controller implements HasMiddleware
     public function destroy(Library $library)
     {
         //
+    }
+
+    public function indexCategory(Category $category){
+        return view('book.index-category', compact('category'));
     }
 }

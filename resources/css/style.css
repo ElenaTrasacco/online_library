@@ -118,6 +118,11 @@ margin-top: 100px;
 font-size: xx-large;
 }
 
+.formTextSizeShow{
+  font-size: larger;
+  color: rgb(117, 57, 0);
+  }
+
 .card-text{
   font-size: x-large;
 }

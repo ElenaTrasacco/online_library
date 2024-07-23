@@ -9,6 +9,12 @@
 </head>
 <body>
     <x-navbar/>
+    @if (session('denied'))
+    <div class="alert alert-danger">
+        {{ session('denied') }}
+    </div>
+    @endif
+    
     <div class="min-vh-100">
         {{$slot}}
     </div>

@@ -2,12 +2,7 @@
     {{-- A good traveler has no fixed plans and is not intent upon arriving. --}}
     
     <form class="mt-3 mx-5" wire:submit="store">
-            @if(session('bookCreated'))
-            <div class="alert alert-success">
-                {{session('bookCreated')}} 
-            </div>
-            @endif
-
+        
         <div class="form-group">
         <label for="cover" class="formTextSize">Cover</label>
         <input type="file" class="form-control form-control-lg" id="cover" placeholder="Enter cover" wire:model="cover">
@@ -35,6 +30,17 @@
         <span class="text-danger">{{$message}}</span>
         @enderror
         </div>
+
+        <div class="mb-3">
+            <label for="category_id" class="form-label formTextSize">Category</label>
+            <select id="category_id" class="form-select form-select-lg" wire:model.live="category_id">
+                @foreach ($categories as $category)
+                    <option value="{{$category->id}}">{{$category->name}}</option>
+                @endforeach
+            </select>
+        </div>
+
+
 
         <div class="form-group">   
             <label for="year" class="formTextSize">Year</label>
@@ -65,5 +71,10 @@
         </button>
         </div>
 
+        @if(session('bookCreated'))
+            <div class="alert alert-success">
+                {{session('bookCreated')}} 
+            </div>
+            @endif  
 
 </div>

@@ -6,6 +6,17 @@
             </div>
         </div>
     </div>
+
+    <div class="container-fluid">
+        <div class="row justify-content-around">
+            @foreach ($categories as $category)
+                <div class="col-12 col-md-2">
+                    <a href="{{route('book.index-category', $category) }}" class="btn btn-custom">{{$category->name}}</a>
+                </div>
+            @endforeach
+        </div>
+    </div>
+
     <div class="container">
         <div class="row">
             <h2 class="text-center mt-3">

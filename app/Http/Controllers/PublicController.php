@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Library;
+use App\Models\Category;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Routing\Controllers\HasMiddleware;
 
@@ -17,8 +18,9 @@ class PublicController extends Controller implements HasMiddleware
     }
 
     public function home(){
+        $categories = Category::all();
         $libraries = Library::orderBy('created_at', 'desc')->take(5)->get();
-        return view ('welcome', compact('libraries'));
+        return view ('welcome', compact('libraries', 'categories'));
         }
 
         public function dashboard(){
