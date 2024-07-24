@@ -34,17 +34,26 @@
         <div class="mb-3">
             <label for="category_id" class="form-label formTextSize">Category</label>
             <select id="category_id" class="form-select form-select-lg" wire:model.live="category_id">
+                <option value="">Select a category</option>
                 @foreach ($categories as $category)
                     <option value="{{$category->id}}">{{$category->name}}</option>
                 @endforeach
             </select>
         </div>
 
+        {{-- <div class="mb-3">
+            <label for="category_id" class="form-label formTextSize">Category</label>
+        </div>
+            @foreach ($categories as $category)
+            <input class="form-check-input form-check-input-lg" type="checkbox" id="category_id" wire:model.live="category_id" value="{{$category->id}}">
+            <label class="form-check-label" for="category_id">{{$category->name}}</label>
+                @endforeach --}}
+
 
 
         <div class="form-group">   
             <label for="year" class="formTextSize">Year</label>
-            <input type="integer" class="form-control form-control-lg" id="year" placeholder="Enter year" wire:model.live="year">
+            <input type="number" class="form-control form-control-lg" id="year" placeholder="Enter year" wire:model.live="year">
             @error('year')
              <span class="text-danger">{{$message}}</span>
             @enderror
@@ -58,10 +67,15 @@
             @enderror
             </div>
           
-              
+         
+        @if(session('bookCreated'))
+        <div class="alert alert-success mt-3">
+            {{session('bookCreated')}} 
+        </div>
+        @endif       
       
         <div class="d-flex justify-content-end">
-        <button type="submit" class="btn btnLogs mt-5"> Insert book
+        <button type="submit" class="btn btnLogs mt-4"> Insert book
         <div class="loader">
         <div class="book"> 
         <div class="page"></div>
@@ -71,10 +85,5 @@
         </button>
         </div>
 
-        @if(session('bookCreated'))
-            <div class="alert alert-success">
-                {{session('bookCreated')}} 
-            </div>
-            @endif  
 
 </div>

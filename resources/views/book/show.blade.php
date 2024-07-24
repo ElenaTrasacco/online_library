@@ -22,8 +22,9 @@
                 <p>Year: {{$library->year}}</p>
                 <p> Category:
                     @if ($library->category)
-                        <a class="formTextSizeShow text-decoration-none" href="{{ route('book.index-category', $library->category) }}">{{$library->category->name}}</a>
-                @endif</p>
+                        <a class="formTextSizeShow text-decoration-none" href="{{route('book.index-category', $library->category) }}">{{$library->category->name}}</a>
+                        </p>
+                @endif
                 <p>Description: {{$library->description}}</p>
                 <p>Inserted by: {{$library->user->name ?? 'Anonimous'}}</p>
             </div>

@@ -39,15 +39,14 @@
         </div>
     @endif
 
- <div class="mb-3">
+  <div class="mb-3">
         <label for="category_id" class="form-label formTextSize">Category</label>
         <select id="category_id" class="form-select form-select-lg" wire:model.live="category_id">
             @foreach ($categories as $category)
                 <option value="{{$category->id}}">{{$category->name}}</option>
             @endforeach
         </select>
-    </div> 
-
+    </div>  
 
 
     <div class="form-group">   
@@ -66,10 +65,14 @@
         @enderror
         </div>
       
-          
+        @if(session('bookEdited'))
+        <div class="alert alert-warning mt-3">
+            {{session('bookEdited')}} 
+        </div>
+        @endif  
   
     <div class="d-flex justify-content-end">
-            <button type="submit" class="btn btnLogs mt-5"> Edit book
+            <button type="submit" class="btn btnLogs mt-3"> Edit book
                 <div class="loader">
                 <div class="book"> 
                 <div class="page"></div>
@@ -79,11 +82,6 @@
             </button>
     </div>
 
-    @if(session('bookEdited'))
-        <div class="alert alert-warning">
-            {{session('bookEdited')}} 
-        </div>
-        @endif 
 
         
 </div>
