@@ -43,6 +43,7 @@ class BookCreateForm extends Component
     return redirect()->back()->with('bookCreated', 'Book created successfully');
     }
 
+
     public function render()
     {
         $categories = Category::orderBy('name')->get();

@@ -32,6 +32,15 @@
         </div>
 
         <div class="mb-3">
+            <label for="category_id" class="form-label formTextSize">Genres</label>
+        </div>
+           @foreach ($categories as $category)
+               <input type="checkbox" wire:model="category_id-{{$category->id}}" value="{{$category->id}}" id="{{$category->id}}">
+               <label for="{{$category->id}}">{{$category->name}}</label>
+           @endforeach
+        
+
+        {{-- <div class="mb-3">
             <label for="category_id" class="form-label formTextSize">Category</label>
             <select id="category_id" class="form-select form-select-lg" wire:model.live="category_id">
                 <option value="">Select a category</option>
@@ -39,16 +48,16 @@
                     <option value="{{$category->id}}">{{$category->name}}</option>
                 @endforeach
             </select>
-        </div>
+        </div>  --}}
 
         {{-- <div class="mb-3">
             <label for="category_id" class="form-label formTextSize">Category</label>
-        </div>
+         </div>
             @foreach ($categories as $category)
-            <input class="form-check-input form-check-input-lg" type="checkbox" id="category_id" wire:model.live="category_id" value="{{$category->id}}">
-            <label class="form-check-label" for="category_id">{{$category->name}}</label>
-                @endforeach --}}
-
+            <input class="form-check-input form-check-input-lg" type="checkbox" id="categoria-{{$category->id}}" wire:model="category_id" value="{{$category->id}}">
+            <label class="form-check-label" for="categoria-{{$category->id}}">{{$category->name}}</label>
+            @endforeach --}}
+           
 
 
         <div class="form-group">   

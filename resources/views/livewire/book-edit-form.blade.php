@@ -39,15 +39,13 @@
         </div>
     @endif
 
-  <div class="mb-3">
-        <label for="category_id" class="form-label formTextSize">Category</label>
-        <select id="category_id" class="form-select form-select-lg" wire:model.live="category_id">
-            @foreach ($categories as $category)
-                <option value="{{$category->id}}">{{$category->name}}</option>
-            @endforeach
-        </select>
-    </div>  
-
+    <div class="mb-3">
+        <label for="category_id" class="form-label formTextSize">Genres</label>
+    </div>
+       @foreach ($categories as $category)
+           <input type="checkbox" wire:model="category_id-{{$category->id}}" value="{{$category->id}}" id="{{$category->id}}">
+           <label for="{{$category->id}}">{{$category->name}}</label>
+       @endforeach
 
     <div class="form-group">   
         <label for="year" class="formTextSize">Year</label>

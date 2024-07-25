@@ -23,6 +23,7 @@ class PublicController extends Controller implements HasMiddleware
         return view ('welcome', compact('libraries', 'categories'));
         }
 
+
         public function dashboard(){
             return view('auth.dashboard');
         }

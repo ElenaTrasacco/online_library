@@ -22,12 +22,7 @@
           <a class="nav-link" href="{{route('book.index')}}">List</a>
         </div>
 
- <div class="navbar-nav">
-        <form class="d-flex justify-content-between">
-                <input class="searchNav form-control rounded form-control-lg" type="search" placeholder="Search a Book" aria-label="Search">
-            <button class="btn navBtn" type="submit">Send</button>
-          </form>
- </div>
+ @livewire('search-bar')
  
         <div class="navbar-nav">
           @guest
