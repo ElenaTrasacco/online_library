@@ -14,6 +14,9 @@
                 <div class="d-flex flex-column ml-3">
                     <a href="{{route('book.show', $book)}}">{{$book->title}} </a>
                 </div>
+                <div class="d-flex flex-column ml-3">
+                  <a href="{{route('book.show', $book)}}">{{$book->author}} </a>
+              </div>
             </div>
        
             @endforeach
