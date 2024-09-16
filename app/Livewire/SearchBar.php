@@ -13,7 +13,7 @@ class SearchBar extends Component
     {
         $results = [];
         if(strlen($this->search) >= 1){
-            $results = Library::where('title', 'like', '%' .$this->search. '%')->limit(5)->get();
+            // $results = Library::where('title', 'like', '%' .$this->search. '%')->limit(5)->get();
             $results = Library::where('author', 'like', '%' .$this->search. '%')->limit(5)->get();
         }
 

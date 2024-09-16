@@ -24,6 +24,10 @@ body{
    margin-right: 10px;
 
 }
+.searchNav:focus{
+  background-color: rgba(117, 57, 0, 0.632);
+  color: wheat;
+}
 
 .navBtn{
     width: 60px;
@@ -152,4 +156,13 @@ font-size:medium;
 
 footer{
     font-size:x-large;
+}
+
+.mtSearch{
+  margin-top: 120px;
+  background-color: wheat;
+}
+
+.linksSearch{
+  color: #5c2e02;
 }
